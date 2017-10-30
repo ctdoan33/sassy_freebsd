@@ -1,0 +1,157 @@
+* {
+	vertical-align: baseline;
+	font-weight: inherit;
+	font-family: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	border: 0 none;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+	}
+$main-color: #990000;
+$main-text: .8em;
+$main-spacing: 4px;
+$main-size: 72px;
+.block{
+	display: inline-block;
+	vertical-align: top;
+}
+.contentlist{
+	margin-left: $main-spacing*10;
+	li{
+		a{
+			color: $main-color;
+		}
+		span{
+			font-weight: bold;
+		}
+	}
+}
+body{
+	width: $main-size*12;
+	height: $main-size*10;
+	header{
+		width: 100%;
+		height: $main-size;
+		background-color: $main-color;
+		img{
+			@extend .block;
+			width: $main-size*3.5;
+			margin-left: $main-spacing*5;
+		}
+		h1{
+			@extend .block;
+			color: white;
+			font-size: $main-text*2;
+			padding-top: $main-spacing*6;
+		}
+		div{
+			@extend .block;
+			text-align: right;
+			width: $main-size*3.5;
+			margin-left: $main-size;
+			ul{
+				@extend .block;
+				list-style: none;
+				margin: $main-spacing 0px;
+				li{
+					display: inline;
+					font-size: $main-text;
+					margin: $main-spacing/2;
+					#textsize{
+						color: white;
+						text-decoration: none;
+					}
+					.textsize{
+						color: yellow;
+					}
+				}
+			}
+			form{
+				input{
+					max-width: $main-size*2;
+				}
+				#searchbutton{
+					@extend .block;
+					background: transparent;
+					color: white;
+					font-size: .7em;
+					border: 1pt solid white;
+					padding: 0px $main-spacing;
+					margin-top: $main-spacing/2;
+				}
+			}
+		}
+	}
+	#menu{
+		height: $main-size/3;
+		background-color: #eee;
+		border: 1pt solid #D4D4D4;
+		ul{
+			list-style: none;
+			margin: $main-spacing/2 0px;
+			li{
+				display: inline;
+				font-size: .9em;
+				margin-left: $main-spacing*4;
+				a{
+					color: #666;
+					font-weight: bold;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	#content{
+		padding: $main-spacing*6;
+		#sidenav{
+			@extend .block;
+			width: $main-size*2;
+			background-color: #eee;
+			border: 1pt solid #D4D4D4;
+			ul{
+				list-style: none;
+				margin: 12px 20px;
+				li{
+					font-size: $main-text;
+					line-height: $main-text*1.5;
+					margin: $main-spacing*2 0px;
+					a{
+						color: $main-color;
+					}
+				}
+			}
+		}
+		#main{
+			@extend .block;
+			width: $main-size*8;
+			margin-left: $main-spacing*4;
+			h2{
+				font-size: $main-text*1.5;
+				font-weight: bold;
+				color: $main-color;
+			}
+			h3{
+				font-size: .9em;
+				font-weight: bold;
+				color: $main-color;
+				margin: $main-spacing*3 0px;
+			}
+			p{
+				font-size: $main-text;
+				line-height: $main-text*1.5;
+				span{
+					color: $main-color;
+					text-decoration: underline;
+				}
+			}
+			ul{
+				@extend .contentlist;
+			}
+			ol{
+				@extend .contentlist;
+			}
+		}
+	}
+}
